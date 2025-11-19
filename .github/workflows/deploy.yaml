@@ -40,3 +40,9 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: Trigger deployment 
+        run: |
+          echo "Init version ${{ github.ref_name }} deployment..."
+          curl -X POST \
+            -H "Authorization: Bearer ${{ secrets.COOLIFY_API_KEY }}" \
+            "${{ secrets.COOLIFY_URL_WH }}"
