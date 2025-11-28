@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - 'kong.yml'
-      - 'docker-compose.yml'
+      - 'kong.yaml'
+      - 'docker-compose.yaml'
 
 jobs:
   trigger-coolify:
